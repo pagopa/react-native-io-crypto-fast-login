@@ -1,18 +1,15 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 import IoCryptoFastLogin from 'react-native-io-crypto-fast-login';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    IoCryptoFastLogin.multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button
+        onPress={async () => await IoCryptoFastLogin.run_android_code()}
+        title={'run Android code'}
+      />
     </View>
   );
 }

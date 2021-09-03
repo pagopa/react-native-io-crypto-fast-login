@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 type IoCryptoFastLoginType = {
-  multiply(a: number, b: number): Promise<number>;
+  run_android_code(): Promise<void>;
 };
 
 const { IoCryptoFastLogin } = NativeModules;
